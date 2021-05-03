@@ -5,6 +5,7 @@ import pytest
 
 from routes import configure_routes
 
+
 class TestClass:
 
     def setup_class(self):

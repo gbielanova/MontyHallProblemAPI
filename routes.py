@@ -3,7 +3,7 @@ from paradox import simulate_paradox
 
 
 def configure_routes(app):
-    # POST POST /play/
+    # POST /play/
     # Request body: {choose_option: str, attempts: int}
     # `choose_option` — keep, change
     # Expected response: `{wins: int, loose: int}`,
