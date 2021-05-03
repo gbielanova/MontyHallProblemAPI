@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort
 from paradox import simulate_paradox
 
 app = Flask(__name__)
@@ -11,8 +11,17 @@ app = Flask(__name__)
 @app.route('/play', methods=['POST'])
 def play():
     request_data = request.get_json()
+
+    if request_data['choose_option'] not in ['change', 'keep']:
+        abort(400, 'Invalid choose_option, available options are change and keep')
+    try:
+        if int(request_data['attempts']) <= 0:
+            abort(400, 'Invalid attempts, attempts should be positive')
+    except ValueError:
+        abort(400, 'Invalid attempts, attempts should be int')
+
     return jsonify(simulate_paradox(request_data['choose_option'],
-                                    request_data['attempts']))
+                                    int(request_data['attempts'])))
 
 
 app.run(port=5000)
