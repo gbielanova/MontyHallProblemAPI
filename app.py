@@ -1,9 +1,9 @@
 from flask import Flask
-from handlers import routes
+from routes import configure_routes
 
 app = Flask(__name__)
 
-routes.configure_routes(app)
+configure_routes(app)
 
 if __name__ == '__main__':
     app.run()

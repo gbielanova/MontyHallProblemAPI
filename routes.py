@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, abort
-from MontyHallProblemAPI.paradox import simulate_paradox
+from paradox import simulate_paradox
 
 
 def configure_routes(app):

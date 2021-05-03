@@ -3,10 +3,7 @@ import json
 import sys
 import pytest
 
-from MontyHallProblemAPI.handlers.routes import configure_routes
-
-from MontyHallProblemAPI.handlers import routes
-
+from routes import configure_routes
 
 class TestClass:
 
