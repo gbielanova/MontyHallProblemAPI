@@ -1,3 +1,6 @@
+import sys
+sys.path.append('./app')
+
 from flask import Flask
 from routes import configure_routes
 

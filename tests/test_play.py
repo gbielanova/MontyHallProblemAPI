@@ -1,3 +1,6 @@
+import sys
+sys.path.append('./app')
+
 from flask import Flask
 import json
 import sys
