@@ -15,3 +15,8 @@ Expected response: `{wins: int, loose: int}`, where `wins` – number of wins an
 ## Tests
 1. POST /play/, body: `{choose_option: "keep", attempts: 100000}` and check in percentage that average wins ~33%
 2. POST /play/, body: `{choose_option: "change", attempts: 100000}` and check in percentage that average wins ~66%
+
+## Run app with Dockerfile commands
+1. `docker build -t python-monty .`
+2. first time run `docker run --publish 5000:5000 python-monty`
+3. next runs `docker run python-monty`
