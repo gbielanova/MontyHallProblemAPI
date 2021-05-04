@@ -3,7 +3,6 @@ sys.path.append('./app')
 
 from flask import Flask
 import json
-import sys
 import pytest
 
 from routes import configure_routes
